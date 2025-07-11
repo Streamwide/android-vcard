@@ -13,7 +13,7 @@
  * @lastModifiedOn Wed, 5 Jun 2024 10:42:49 +0100
  */
 
-package main.java.com.streamwide.smartms.lib.vcard.provider;
+package com.streamwide.smartms.lib.vcard.provider;
 
 public interface BaseColumns
 {

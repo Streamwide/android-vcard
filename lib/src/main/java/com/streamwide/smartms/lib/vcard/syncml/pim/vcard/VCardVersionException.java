@@ -13,7 +13,7 @@
  * @lastModifiedOn Wed, 5 Jun 2024 10:42:50 +0100
  */
 
-package main.java.com.streamwide.smartms.lib.vcard.syncml.pim.vcard;
+package com.streamwide.smartms.lib.vcard.syncml.pim.vcard;
 
 public interface VCardVersionException {
 }

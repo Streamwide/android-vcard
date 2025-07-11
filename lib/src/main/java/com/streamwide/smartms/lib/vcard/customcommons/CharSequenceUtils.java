@@ -13,7 +13,7 @@
  * @lastModifiedOn Thu, 2 May 2024 20:52:37 +0100
  */
 
-package main.java.com.streamwide.smartms.lib.vcard.customcommons;
+package com.streamwide.smartms.lib.vcard.customcommons;
 
 /**
  * <p>
