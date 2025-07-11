@@ -1,0 +1,26 @@
+
+
+-repackageclasses com.streamwide.smartms.lib.vcard
+-keepattributes Exceptions
+-keep class com.streamwide.smartms.lib.vcard.provider.Contacts {*;}
+-keep class com.streamwide.smartms.lib.vcard.provider.Contacts$ContactMethods {*;}
+-keep class com.streamwide.smartms.lib.vcard.provider.Contacts$ContactMethodsColumns {*;}
+-keep class com.streamwide.smartms.lib.vcard.provider.Contacts$Phones {*;}
+-keep class com.streamwide.smartms.lib.vcard.provider.Contacts$PhonesColumns {*;}
+-keep class com.streamwide.smartms.lib.vcard.syncml.pim.vcard.ContactStruct {*;}
+-keep class com.streamwide.smartms.lib.vcard.syncml.pim.vcard.ContactStruct$OrganizationData {*;}
+-keep class com.streamwide.smartms.lib.vcard.syncml.pim.vcard.ContactStruct$PhoneData {*;}
+-keep class com.streamwide.smartms.lib.vcard.syncml.pim.vcard.ContactStruct$ContactMethod {*;}
+-keep class com.streamwide.smartms.lib.vcard.syncml.pim.vcard.VCardException {*;}
+-keep class com.streamwide.smartms.lib.vcard.syncml.pim.VDataBuilder {*;}
+-keep class com.streamwide.smartms.lib.vcard.syncml.pim.vcard.VCardException {*;}
+-keep class com.streamwide.smartms.lib.vcard.syncml.pim.vcard.VCardParser {*;}
+-keep class com.streamwide.smartms.lib.vcard.syncml.pim.PropertyNode {*;}
+-keep class com.streamwide.smartms.lib.vcard.customcommons.Charsets {*;}
+-keep class com.streamwide.smartms.lib.vcard.text.TextUtils {*;}
+-keep class com.streamwide.smartms.lib.vcard.syncml.pim.VDataBuilder {*;}
+-keep class com.streamwide.smartms.lib.vcard.syncml.pim.VNode {*;}
+-keep public class com.streamwide.smartms.lib.vcard.telephony.PhoneNumberUtils {*;}
+-keep class com.streamwide.smartms.lib.vcard.logger.Logger {*;}
+-keep enum com.streamwide.smartms.lib.vcard.logger.Logger$LogLevel {*;}
+-keep interface com.streamwide.smartms.lib.vcard.logger.Logger$LoggerDelegate {*;}
