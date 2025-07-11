@@ -2,7 +2,7 @@
  *
  * 	StreamWIDE (Team on The Run)
  *
- * @createdBy  AndroidTeam on Thu, 27 Jul 2023 08:31:53 +0100
+ * @createdBy  AndroidTeam on Thu, 13 Jul 2023 12:15:03 +0100
  * @copyright  Copyright (c) 2023 StreamWIDE UK Ltd (Team on the Run)
  * @email      support@teamontherun.com
  *
@@ -10,45 +10,42 @@
  * 	of all code contained in this file. Do not redistribute or
  *  	re-use without permission.
  *
- * @lastModifiedOn Thu, 27 Jul 2023 08:29:20 +0100
+ * @lastModifiedOn Thu, 13 Jul 2023 12:14:50 +0100
  */
 
-plugins {
-    id("com.streamwide.android-library-convention")
-}
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 
+apply(plugin = "android-reporting")
 
-android {
-    namespace = "com.streamwide.smartms.lib.vcard"
+project.subprojects {
+    configurations.all {
 
-    defaultConfig{
-        consumerProguardFiles ("consumer-rules.pro")
-    }
-    buildTypes {
-        release {
-            isMinifyEnabled = true
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-
+        resolutionStrategy.dependencySubstitution.all {
+            requested.let {
+                if (it is ModuleComponentSelector && it.group == "com.streamwide") {
+                    val targetProject = findProject(":application:${it.module}")
+                        ?: findProject(":sdk:${it.module}")
+                        ?: findProject(":mytools:${it.module}")
+                    if (targetProject != null) {
+                        useTarget(targetProject)
+                    }
+                }
+            }
         }
-    }
 
-
-    tasks.withType<Test> {
-        useJUnitPlatform()
     }
 }
 
+@Suppress("DSL_SCOPE_VIOLATION")
+plugins {
+    alias(libs.plugins.android.library) apply false
+    alias(libs.plugins.kotlin.android) apply false
+    alias(libs.plugins.kotlin.jvm) apply false
+    //id("com.streamwide.release-notes")
 
-tasks.withType<Test> {
-    useJUnitPlatform()
 }
 
-
-dependencies {
-    implementation (libs.androidx.annotation)
-    testImplementation(libs.junit.jupiter.api)
-    testImplementation(libs.junit.jupiter.params)
-    testRuntimeOnly(libs.junit.jupiter.engine)
+task("clean", Delete::class) {
+    delete(rootProject.buildDir)
 }
-
